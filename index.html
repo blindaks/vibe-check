@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Outfit Suggestion</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <h1>Vibe Check</h1>
+    <h2>Outfit Suggestions for Every Mood!</h2>
+    <p>
+      We know that your mood can play a huge role in what you want to wear, and
+      we're here to help you find the perfect ensemble to match your vibe.
+      Whether you're feeling adventurous, relaxed, or anything in between, we've
+      got you covered!
+    </p>
+    <p>
+      Just fill out your name and gender, and let us work our magic. We'll whip
+      up some stylish outfit ideas tailored just for you. Ready to look amazing?
+      Let's get started!
+    </p>
+    <form id="outfitForm">
+      <label for="mood">Mood:</label>
+      <input type="text" id="mood" placeholder="Enter mood" required /><br />
+      <label for="gender">Gender:</label>
+      <input
+        type="text"
+        id="gender"
+        placeholder="Enter gender"
+        required
+      /><br />
+      <button type="button" id="getOutfit">Get Outfit</button>
+    </form>
+    <div id="imagesContainer"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
