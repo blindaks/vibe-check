@@ -12,7 +12,7 @@ body {
   background-repeat: no-repeat;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 400; /* Change <weight> to a valid value */
   font-style: normal;
   color: var(--text-color);
   line-height: 1.6;
@@ -54,9 +54,7 @@ a {
 
 /* Container for centering content */
 .container {
-  background-color: var(
-    --container-bg-color
-  ); /* Use variable for container color */
+  background-color: var(--container-bg-color); 
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(37, 37, 37, 0.1); /* Soft shadow */
   max-width: 900px;
@@ -71,9 +69,12 @@ a {
 }
 
 .logo {
-  animation: slideDown 3s ease-in-out; /* Apply the slide down animation */
-  animation-delay: 0.5s; /* Optional delay for animation start */
-  transition: transform 0.3s ease-in-out;
+  animation: slideDown 2s ease-out forwards;
+  opacity: 0; /* Initially hide the logo */
+  transform: translateY(-100%); 
+  transition: transform 0.3s ease-in-out; 
+  width: 150px; 
+  height: auto; 
 }
 
 .logo:hover {
@@ -91,21 +92,22 @@ a {
   }
 }
 
+
 .title {
   font-size: 3em; /* Larger title font */
   color: var(--header-text-color); /* Use variable for header text color */
-  overflow: hidden; /* Ensure content doesn't spill over */
-  animation: slideRight 1s ease-out; /* Apply the animation */
-  animation-delay: 0.5s; /* Optional delay */
+  overflow: hidden;
+  animation: fadeIn 2s ease forwards; /* Apply the fade-in animation */
+  animation-delay: 1s; 
+  opacity: 0; /*hide the title before the aniamtion */
+  margin: 20px 0; /* Add some margin for spacing */
 }
 
-@keyframes slideRight {
+@keyframes fadeIn {
   from {
-    transform: translateX(-100%); /* Start off-screen to the left */
     opacity: 0; /* Start with opacity 0 for fade-in effect */
   }
   to {
-    transform: translateX(0); /* End at original position */
     opacity: 1; /* End with full opacity */
   }
 }
@@ -114,21 +116,10 @@ a {
   font-size: 1.5em; /* Subtitle font */
   color: var(--header-text-color);
   margin-top: 10px;
-  overflow: hidden; /* Ensure content doesn't spill over */
-  animation: slideLeft 1s ease-out; /* Apply the animation */
-  animation-delay: 0.5s; /* Optional delay */
-}
-
-/* Keyframes for slide-left animation */
-@keyframes slideLeft {
-  from {
-    transform: translateX(100%); /* Start off-screen to the right */
-    opacity: 0; /* Start with opacity 0 for fade-in effect */
-  }
-  to {
-    transform: translateX(0); /* End at original position */
-    opacity: 1; /* End with full opacity */
-  }
+  overflow: hidden;
+  animation: fadeIn 2s ease forwards; /* Apply the fade-in animation */
+  animation-delay: 1.5s; /* Optional delay */
+  opacity: 0; /* Initially hide the subtitle */
 }
 
 /* Description text styling */
@@ -197,7 +188,7 @@ input[type="text"]:focus {
 
 .cta-button:hover {
   animation: ani 8s linear infinite;
-  transform: scale(1.05); /* Slight zoom effect on hover */
+  transform: scale(1.05); /* Slight zoom effect when hover */
 }
 
 @keyframes ani {
@@ -235,14 +226,14 @@ input[type="text"]:focus {
 .footer-text {
   margin-top: 20px;
   font-size: 0.9em;
-  color: var(--footer-text-color); /* Use variable for footer text color */
+  color: var(--footer-text-color); /* Use the variable for footer text color */
   text-align: center;
 }
 
 .images-container {
   display: flex;
-  flex-wrap: wrap; /* Allows images to wrap to the next line */
-  justify-content: center; /* Center images horizontally */
+  flex-wrap: wrap; 
+  justify-content: center; /* Always Center the images horizontally */
   gap: 20px; /* Space between images */
   margin-top: 20px;
 }
