@@ -1,79 +1,128 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
+/* Reset some default styles for consistency across browsers */
+* {
   margin: 0;
   padding: 0;
-  margin-top: 100px;
+  box-sizing: border-box;
 }
 
-h1,
-h2,
-p {
-  display: block;
-  margin: 0 auto;
-  max-width: 800px;
+body {
+  font-family: 'Poppins', Arial, sans-serif; /* Use a modern font */
+  background-color: #f0f0f5; /* Slightly lighter background */
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: #121417
+}
+
+/* Container for centering content */
+.container {
+  background-color: #17191C; /* White background for contrast */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(37, 37, 37, 0.1); /* Soft shadow */
+  max-width: 900px;
+  padding: 40px;
   text-align: center;
-  margin-top: 20px;
-  color: #2c3e50;
 }
 
-form {
+/* Header styling */
+.header {
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 2.5em; /* Larger title font */
+  color: #1287FD; /* Darker text color */
+}
+
+.subtitle {
+  font-size: 1.5em; /* Subtitle font */
+  color: #0b59a7;
+  margin-top: 10px;
+}
+
+/* Description text styling */
+.description {
+  max-width: 800px;
+  margin: 20px auto;
+  font-size: 1.1em;
+  color: #555; /* Softer text color */
+  line-height: 1.8;
+}
+
+/* Form styling */
+.outfit-form {
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 label {
-  margin: 10px 0;
-  font-size: 16px;
+  font-size: 1em;
+  color: #2c3e50;
+  margin-bottom: 5px;
 }
 
 input[type="text"],
 input[type="number"] {
-  padding: 10px;
-  width: 200px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border-color: #525252; /* Blue border on focus */
+  border-width: 5px;
+  padding: 12px;
+  width: 250px;
+  border-radius: 10px;
+  font-size: 1em;
+  transition: border-color 0.3s;
 }
 
+input[type="text"]:focus {
+  border-color: #0B5AA9; /* Blue border on focus */
+  border-radius: 10px;
+  outline: none;
+}
 
-button {
-  text-decoration: none;
+/* Button styling with animation */
+.cta-button {
   position: relative;
-  border: none;
-  font-size: 16px;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
   font-family: inherit;
-  cursor: pointer;
   color: #fff;
-  width: 9em;
-  height: 3em;
-  line-height: 2em;
-  text-align: center;
-  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background: linear-gradient(90deg, #1287FD, #03a9f4);
   background-size: 300%;
+  border: none;
   border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.4s, transform 0.2s;
   z-index: 1;
 }
 
-button:hover {
+.cta-button:hover {
   animation: ani 8s linear infinite;
-  border: none;
+  transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
 @keyframes ani {
   0% {
     background-position: 0%;
   }
-
   100% {
     background-position: 400%;
   }
 }
 
-button:before {
+.cta-button:before {
   content: "";
   position: absolute;
   top: -5px;
@@ -81,38 +130,47 @@ button:before {
   right: -5px;
   bottom: -5px;
   z-index: -1;
-  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background: linear-gradient(90deg, #0b59a7, #1287FD);
   background-size: 400%;
   border-radius: 35px;
   transition: 1s;
 }
 
-button:hover::before {
-  filter: blur(20px);
+.cta-button:hover::before {
+  filter: blur(15px); /* Softer blur effect */
 }
 
-button:active {
-  background: linear-gradient(32deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+.cta-button:active {
+  transform: scale(0.98); /* Button press effect */
 }
 
-
-
-#imagesContainer {
+/* Images container styling */
+.images-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 20px;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #17191C; /* Separate background for image section */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Soft shadow */
 }
 
 .image-item {
-  border: 1px solid #ddd;
+  border: 1px solid #0084ff;
   border-radius: 8px;
   padding: 10px;
   margin: 10px;
-  background-color: #fff;
+  background-color: #1287FD; 
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 220px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-item:hover {
+  transform: translateY(-5px); /* Lift on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
 }
 
 .image-item img {
@@ -120,6 +178,11 @@ button:active {
   height: 200px;
   object-fit: cover;
   border-radius: 4px;
+  transition: opacity 0.3s;
+}
+
+.image-item img:hover {
+  opacity: 0.9; /* Slightly faded effect */
 }
 
 .image-item p {
@@ -127,3 +190,5 @@ button:active {
   font-size: 14px;
   color: #555;
 }
+
+
