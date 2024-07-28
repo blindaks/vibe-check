@@ -6,7 +6,10 @@
 }
 
 body {
-  font-family: "Poppins", Arial, sans-serif; /* Use a modern font */
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* Change <weight> to a valid value */
+  font-style: normal;
   color: var(--text-color);
   line-height: 1.6;
   display: flex;
@@ -21,7 +24,7 @@ body {
 /* CSS Variables for Light and Dark Modes */
 :root {
   --background-color: #121417;
-  --text-color: #333;
+  --text-color: #888;
   --container-bg-color: #17191c;
   --button-bg-color: linear-gradient(90deg, #1287fd, #03a9f4);
   --button-hover-bg-color: #1287fd;
@@ -39,6 +42,10 @@ body.light-mode {
   --input-border-color: #ddd;
   --footer-text-color: #555;
   --header-text-color: #0056b3;
+}
+
+a {
+  color: #1287fd;
 }
 
 /* Container for centering content */
@@ -83,10 +90,10 @@ body.light-mode {
 }
 
 .title {
-  font-size: 2.5em; /* Larger title font */
+  font-size: 3em; /* Larger title font */
   color: var(--header-text-color); /* Use variable for header text color */
   overflow: hidden;
-  animation: fadeIn 3s ease forwards; /* Apply the fade-in animation */
+  animation: fadeIn 2s ease forwards; /* Apply the fade-in animation */
   animation-delay: 1s; 
   opacity: 0; /*hide the title before the aniamtion */
   margin: 20px 0; /* Add some margin for spacing */
@@ -106,7 +113,7 @@ body.light-mode {
   color: var(--header-text-color);
   margin-top: 10px;
   overflow: hidden;
-  animation: fadeIn 3s ease forwards; /* Apply the fade-in animation */
+  animation: fadeIn 2s ease forwards; /* Apply the fade-in animation */
   animation-delay: 1.5s; /* Optional delay */
   opacity: 0; /* Initially hide the subtitle */
 }
@@ -143,7 +150,9 @@ label {
 
 input[type="text"],
 input[type="number"] {
-  border-color: var(--input-border-color); /* Use variable for input border color */
+  border-color: var(
+    --input-border-color
+  ); /* Use variable for input border color */
   border-width: 5px;
   padding: 12px;
   width: 250px;
@@ -164,7 +173,7 @@ input[type="text"]:focus {
   font-size: 1em;
   font-family: inherit;
   color: #fff;
-  background: linear-gradient(90deg, #1287FD, #03a9f4);
+  background: linear-gradient(90deg, #1287fd, #03a9f4);
   background-size: 300%;
   border: none;
   border-radius: 30px;
@@ -195,7 +204,7 @@ input[type="text"]:focus {
   right: -5px;
   bottom: -5px;
   z-index: -1;
-  background: linear-gradient(90deg, #0b59a7, #1287FD);
+  background: linear-gradient(90deg, #0b59a7, #1287fd);
   background-size: 400%;
   border-radius: 35px;
   transition: 1s;
@@ -226,7 +235,8 @@ input[type="text"]:focus {
 }
 
 img {
-  width: 200px; /* Set a fixed width for images */
+  width: 200px;
+  height: 200px; /* Set a fixed width for images */
   border-radius: 10px;
   transition: transform 0.3s; /* Add transition for smooth scaling */
 }
