@@ -16,6 +16,12 @@
     <title>VibeCheck - Outfitting made easy</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
@@ -24,11 +30,13 @@
           <img src="logo.png" alt="Logo" class="logo" width="100" />
         </a>
         <h1 class="title">VibeCheck</h1>
-        <h2 class="subtitle">Outfit Suggestions for Every Mood.</h2>
+        <h2 class="subtitle">Outfit Suggestions for Every Mood!</h2>
       </header>
 
       <!-- Light/Dark mode toggle button -->
-      <button id="modeToggle" class="mode-toggle">Switch to Light Mode</button>
+      <button id="modeToggle" class="mode-toggle light-mode">
+        Switch to Dark Mode
+      </button>
 
       <main class="content">
         <p class="description">
@@ -51,7 +59,12 @@
 
           <div class="form-group">
             <label for="gender">Gender:</label>
-            <input type="text" id="gender" placeholder="Enter gender" required />
+            <input
+              type="text"
+              id="gender"
+              placeholder="Enter gender"
+              required
+            />
           </div>
 
           <button type="button" id="getOutfit" class="cta-button">
@@ -65,8 +78,8 @@
       </section>
       <div>
         <p class="footer-text">
-          ©️ VibeCheck 2024 | Built by Kelechi Opurum & Akrati Verma | Built with
-          HTML, CSS, and JS
+          ©️ VibeCheck 2024 | Built by Kelechi Opurum & Akrati Verma | Built
+          with HTML, CSS, and JS
         </p>
       </div>
     </div>

@@ -6,7 +6,10 @@
 }
 
 body {
-  font-family: "Poppins", Arial, sans-serif; /* Use a modern font */
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
   color: var(--text-color);
   line-height: 1.6;
   display: flex;
@@ -21,7 +24,7 @@ body {
 /* CSS Variables for Light and Dark Modes */
 :root {
   --background-color: #121417;
-  --text-color: #333;
+  --text-color: #888;
   --container-bg-color: #17191c;
   --button-bg-color: linear-gradient(90deg, #1287fd, #03a9f4);
   --button-hover-bg-color: #1287fd;
@@ -43,7 +46,9 @@ body.light-mode {
 
 /* Container for centering content */
 .container {
-  background-color: var(--container-bg-color); /* Use variable for container color */
+  background-color: var(
+    --container-bg-color
+  ); /* Use variable for container color */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(37, 37, 37, 0.1); /* Soft shadow */
   max-width: 900px;
@@ -79,7 +84,7 @@ body.light-mode {
 }
 
 .title {
-  font-size: 2.5em; /* Larger title font */
+  font-size: 3em; /* Larger title font */
   color: var(--header-text-color); /* Use variable for header text color */
   overflow: hidden; /* Ensure content doesn't spill over */
   animation: slideRight 1s ease-out; /* Apply the animation */
@@ -150,7 +155,9 @@ label {
 
 input[type="text"],
 input[type="number"] {
-  border-color: var(--input-border-color); /* Use variable for input border color */
+  border-color: var(
+    --input-border-color
+  ); /* Use variable for input border color */
   border-width: 5px;
   padding: 12px;
   width: 250px;
@@ -171,7 +178,7 @@ input[type="text"]:focus {
   font-size: 1em;
   font-family: inherit;
   color: #fff;
-  background: linear-gradient(90deg, #1287FD, #03a9f4);
+  background: linear-gradient(90deg, #1287fd, #03a9f4);
   background-size: 300%;
   border: none;
   border-radius: 30px;
@@ -202,7 +209,7 @@ input[type="text"]:focus {
   right: -5px;
   bottom: -5px;
   z-index: -1;
-  background: linear-gradient(90deg, #0b59a7, #1287FD);
+  background: linear-gradient(90deg, #0b59a7, #1287fd);
   background-size: 400%;
   border-radius: 35px;
   transition: 1s;
