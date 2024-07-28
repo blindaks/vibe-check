@@ -6,26 +6,50 @@
 }
 
 body {
-  font-family: 'Poppins', Arial, sans-serif; /* Use a modern font */
-  background-color: #f0f0f5; /* Slightly lighter background */
-  color: #333;
+  font-family: "Poppins", Arial, sans-serif; /* Use a modern font */
+  color: var(--text-color);
   line-height: 1.6;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 20px;
-  background: #121417
+  background: var(--background-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* CSS Variables for Light and Dark Modes */
+:root {
+  --background-color: #121417;
+  --text-color: #333;
+  --container-bg-color: #17191c;
+  --button-bg-color: linear-gradient(90deg, #1287fd, #03a9f4);
+  --button-hover-bg-color: #1287fd;
+  --input-border-color: #525252;
+  --footer-text-color: #777;
+  --header-text-color: #1287fd;
+}
+
+body.light-mode {
+  --background-color: #f9f9f9;
+  --text-color: #222;
+  --container-bg-color: #fff;
+  --button-bg-color: linear-gradient(90deg, #4a90e2, #007bff);
+  --button-hover-bg-color: #007bff;
+  --input-border-color: #ddd;
+  --footer-text-color: #555;
+  --header-text-color: #0056b3;
 }
 
 /* Container for centering content */
 .container {
-  background-color: #17191C; /* White background for contrast */
+  background-color: var(--container-bg-color); /* Use variable for container color */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(37, 37, 37, 0.1); /* Soft shadow */
   max-width: 900px;
   padding: 40px;
   text-align: center;
+  transition: background-color 0.3s;
 }
 
 /* Header styling */
@@ -33,15 +57,65 @@ body {
   margin-bottom: 20px;
 }
 
+.logo {
+  animation: slideDown 3s ease-in-out; /* Apply the slide down animation */
+  animation-delay: 0.5s; /* Optional delay for animation start */
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.1); /* Scale the image to 1.6 times its original size */
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%); /* Start off-screen above */
+    opacity: 0; /* Start with opacity 0 for fade-in effect */
+  }
+  to {
+    transform: translateY(0); /* End at original position */
+    opacity: 1; /* End with full opacity */
+  }
+}
+
 .title {
   font-size: 2.5em; /* Larger title font */
-  color: #1287FD; /* Darker text color */
+  color: var(--header-text-color); /* Use variable for header text color */
+  overflow: hidden; /* Ensure content doesn't spill over */
+  animation: slideRight 1s ease-out; /* Apply the animation */
+  animation-delay: 0.5s; /* Optional delay */
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-100%); /* Start off-screen to the left */
+    opacity: 0; /* Start with opacity 0 for fade-in effect */
+  }
+  to {
+    transform: translateX(0); /* End at original position */
+    opacity: 1; /* End with full opacity */
+  }
 }
 
 .subtitle {
   font-size: 1.5em; /* Subtitle font */
-  color: #0b59a7;
+  color: var(--header-text-color);
   margin-top: 10px;
+  overflow: hidden; /* Ensure content doesn't spill over */
+  animation: slideLeft 1s ease-out; /* Apply the animation */
+  animation-delay: 0.5s; /* Optional delay */
+}
+
+/* Keyframes for slide-left animation */
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%); /* Start off-screen to the right */
+    opacity: 0; /* Start with opacity 0 for fade-in effect */
+  }
+  to {
+    transform: translateX(0); /* End at original position */
+    opacity: 1; /* End with full opacity */
+  }
 }
 
 /* Description text styling */
@@ -49,7 +123,7 @@ body {
   max-width: 800px;
   margin: 20px auto;
   font-size: 1.1em;
-  color: #555; /* Softer text color */
+  color: var(--text-color); /* Use variable for text color */
   line-height: 1.8;
 }
 
@@ -70,13 +144,13 @@ body {
 
 label {
   font-size: 1em;
-  color: #2c3e50;
+  color: var(--text-color); /* Use variable for label text color */
   margin-bottom: 5px;
 }
 
 input[type="text"],
 input[type="number"] {
-  border-color: #525252; /* Blue border on focus */
+  border-color: var(--input-border-color); /* Use variable for input border color */
   border-width: 5px;
   padding: 12px;
   width: 250px;
@@ -86,9 +160,7 @@ input[type="number"] {
 }
 
 input[type="text"]:focus {
-  border-color: #0B5AA9; /* Blue border on focus */
-  border-radius: 10px;
-  outline: none;
+  border-color: #0b5aa9; /* Blue color for focused input */
 }
 
 /* Button styling with animation */
@@ -144,51 +216,48 @@ input[type="text"]:focus {
   transform: scale(0.98); /* Button press effect */
 }
 
-/* Images container styling */
+/* Footer styling */
+.footer-text {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: var(--footer-text-color); /* Use variable for footer text color */
+  text-align: center;
+}
+
 .images-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 30px;
-  padding: 20px;
-  background-color: #17191C; /* Separate background for image section */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Soft shadow */
+  flex-wrap: wrap; /* Allows images to wrap to the next line */
+  justify-content: center; /* Center images horizontally */
+  gap: 20px; /* Space between images */
+  margin-top: 20px;
 }
 
-.image-item {
-  border: 1px solid #0084ff;
-  border-radius: 8px;
-  padding: 10px;
-  margin: 10px;
-  background-color: #1287FD; 
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 220px;
-  transition: transform 0.3s, box-shadow 0.3s;
+img {
+  width: 200px; /* Set a fixed width for images */
+  border-radius: 10px;
+  transition: transform 0.3s; /* Add transition for smooth scaling */
 }
 
-.image-item:hover {
-  transform: translateY(-5px); /* Lift on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+img:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
-.image-item img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 4px;
-  transition: opacity 0.3s;
+/* Light/Dark mode toggle button */
+.mode-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--button-bg-color);
+  color: white;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  outline: none;
 }
 
-.image-item img:hover {
-  opacity: 0.9; /* Slightly faded effect */
+.mode-toggle:hover {
+  background-color: var(--button-hover-bg-color);
 }
-
-.image-item p {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #555;
-}
-
-

@@ -1,59 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<!--- FAVICON --->
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
+  <head>
+    <!--- FAVICON --->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32x32.png"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VibeCheck - Outfitting made easy</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
-</head>
-<body>
-  
-  <div class="container">
-    <header class="header">
-      <img src="logo.png" alt="Logo" class="logo" width="100"/>
-      <h1 class="title">VibeCheck</h1>
-      <h2 class="subtitle">Outfit Suggestions for Every Mood.</h2>
-    </header>
-    
-    <main class="content">
-      <p class="description">
-        We know that your mood can play a huge role in what you want to wear, and
-        we're here to help you find the perfect ensemble to match your vibe.
-        Whether you're feeling adventurous, relaxed, or anything in between, we've
-        got you covered!
-      </p>
-      <p class="description">
-        Just fill out your name and gender, and let us work our magic. We'll whip
-        up some stylish outfit ideas tailored just for you. Ready to look amazing?
-        Let's get started!
-      </p>
-      
-      <form id="outfitForm" class="outfit-form">
-        <div class="form-group">
-          <label for="mood">Mood:</label>
-          <input type="text" id="mood" placeholder="Enter mood" required />
-        </div>
-        
-        <div class="form-group">
-          <label for="gender">Gender:</label>
-          <input type="text" id="gender" placeholder="Enter gender" required />
-        </div>
-        
-        <button type="button" id="getOutfit" class="cta-button">Get Outfit</button>
-      </form>
-    </main>
-    
-    <section id="imagesContainer" class="images-container">
-      <!-- Images will be dynamically inserted here -->
-    </section>
-  </div>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VibeCheck - Outfitting made easy</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <a class="logo" href="index.html">
+          <img src="logo.png" alt="Logo" class="logo" width="100" />
+        </a>
+        <h1 class="title">VibeCheck</h1>
+        <h2 class="subtitle">Outfit Suggestions for Every Mood.</h2>
+      </header>
 
-  <script src="script.js"></script>
-</body>
+      <!-- Light/Dark mode toggle button -->
+      <button id="modeToggle" class="mode-toggle">Switch to Light Mode</button>
+
+      <main class="content">
+        <p class="description">
+          We know that your mood can play a huge role in what you want to wear,
+          and we're here to help you find the perfect ensemble to match your
+          vibe. Whether you're feeling adventurous, relaxed, or anything in
+          between, we've got you covered!
+        </p>
+        <p class="description">
+          Just fill out your name and gender, and let us work our magic. We'll
+          whip up some stylish outfit ideas tailored just for you. Ready to look
+          amazing? Let's get started!
+        </p>
+
+        <form id="outfitForm" class="outfit-form">
+          <div class="form-group">
+            <label for="mood">Mood:</label>
+            <input type="text" id="mood" placeholder="Enter mood" required />
+          </div>
+
+          <div class="form-group">
+            <label for="gender">Gender:</label>
+            <input type="text" id="gender" placeholder="Enter gender" required />
+          </div>
+
+          <button type="button" id="getOutfit" class="cta-button">
+            Get Outfit
+          </button>
+        </form>
+      </main>
+
+      <section id="imagesContainer" class="images-container">
+        <!-- Images will be dynamically inserted here -->
+      </section>
+      <div>
+        <p class="footer-text">
+          ©️ VibeCheck 2024 | Built by Kelechi Opurum & Akrati Verma | Built with
+          HTML, CSS, and JS
+        </p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>

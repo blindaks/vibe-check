@@ -95,3 +95,28 @@ const displayOutfitImages = async () => {
 document
   .getElementById("getOutfit")
   .addEventListener("click", displayOutfitImages);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const modeToggle = document.getElementById('modeToggle');
+    const body = document.body;
+  
+    // Check local storage for mode preference
+    const savedMode = localStorage.getItem('theme');
+  
+    if (savedMode === 'light') {
+      body.classList.add('light-mode');
+      modeToggle.textContent = 'Switch to Dark Mode';
+    }
+  
+    modeToggle.addEventListener('click', () => {
+      body.classList.toggle('light-mode');
+  
+      // Update button text based on current mode
+      const isLightMode = body.classList.contains('light-mode');
+      modeToggle.textContent = isLightMode ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+  
+      // Save mode preference in local storage
+      localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
+    });
+  });
+  
