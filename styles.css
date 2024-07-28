@@ -5,6 +5,17 @@
   box-sizing: border-box;
 }
 
+body.light-mode {
+  --background-color: #f9f9f9;
+  --text-color: #222;
+  --container-bg-color: #fff;
+  --button-bg-color: linear-gradient(90deg, #4a90e2, #007bff);
+  --button-hover-bg-color: #007bff;
+  --input-border-color: #ddd;
+  --footer-text-color: #555;
+  --header-text-color: #0056b3;
+}
+
 body {
   background-image: url("https://png.pngtree.com/background/20220731/original/pngtree-doodle-abstract-blue-background-picture-image_1897328.jpg"); /* Replace with the path to your image */
   background-size: cover; /* This makes sure the image covers the entire page */
