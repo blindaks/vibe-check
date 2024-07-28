@@ -6,6 +6,10 @@
 }
 
 body {
+  background-image: url("https://png.pngtree.com/background/20220731/original/pngtree-doodle-abstract-blue-background-picture-image_1897328.jpg"); /* Replace with the path to your image */
+  background-size: cover; /* This makes sure the image covers the entire page */
+  background-position: center; /* This centers the image */
+  background-repeat: no-repeat;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
@@ -17,7 +21,7 @@ body {
   align-items: center;
   min-height: 100vh;
   padding: 20px;
-  background: var(--background-color);
+  /* background: var(--background-color); */
   transition: background-color 0.3s, color 0.3s;
 }
 
