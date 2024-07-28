@@ -44,6 +44,10 @@ body.light-mode {
   --header-text-color: #0056b3;
 }
 
+a {
+  color: #1287fd;
+}
+
 /* Container for centering content */
 .container {
   background-color: var(
@@ -240,7 +244,8 @@ input[type="text"]:focus {
 }
 
 img {
-  width: 200px; /* Set a fixed width for images */
+  width: 200px;
+  height: 200px; /* Set a fixed width for images */
   border-radius: 10px;
   transition: transform 0.3s; /* Add transition for smooth scaling */
 }
